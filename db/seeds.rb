@@ -13,7 +13,7 @@ nam = ["Albert","Leonardo","Archimedes","Faraday","Nikola","Curie","Planck","New
 
 nam.each do |c|
     4.times do |i|
-        User.create(name:"#{c+i.to_s}", phone:"9534578902", email:"#{c+i.to_s}@gmail.com", dob:"18 Dec 2023", username:"user_#{c+i.to_s}", password_digest:"Abcd1234/", bio:"Lorem ipsum dolor sit, amet compositis cumanum defuturum, exquisitis inveniri migrare opes tum videretur. Alienae consule imperii ineruditus, ob prodesset provocarem referta venandi. Accommodare bono corrupti cura geometria horrent opinionum philosophis placebit privamur probo tua. Abest aliud contineri displicet, inportuno inveniri", location:"Indore, India", website:"https://www.#{c+i.to_s}.com", user_normal:true)
+        User.create(name:"#{c+i.to_s}", phone:"9534578902", dob:"18 Dec 2023", username:"user_#{c+i.to_s}", bio:"Lorem ipsum dolor sit, amet compositis cumanum defuturum, exquisitis inveniri migrare opes tum videretur. Alienae consule imperii ineruditus, ob prodesset provocarem referta venandi. Accommodare bono corrupti cura geometria horrent opinionum philosophis placebit privamur probo tua. Abest aliud contineri displicet, inportuno inveniri", location:"Indore, India", website:"https://www.#{c+i.to_s}.com", user_normal:true)
     end
 end
 
