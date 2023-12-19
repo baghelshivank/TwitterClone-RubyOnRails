@@ -12,8 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    render home
-  end
+    redirect_to :controller => 'home', :action => 'index'
 
   # GET /resource/edit
   # def edit

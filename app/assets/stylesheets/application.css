@@ -14,8 +14,40 @@
  *= require_self
  */
 
+ @import "font-awesome";
+
  *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
  }
+
+  /* SIDE MENU PARTIAL CSS ========================================================================= */
+
+#side-menu{
+   width: 10vw;
+   background-color: white;
+   min-height: 100vh;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+}
+#side-menu > div{
+   width: 2rem;
+   height: 2rem;
+   border-radius: 50%;
+
+
+}
+#side-menu > div > div{
+   width: 100%;
+   height: 100%;
+   border-radius: 50%;
+}
+#side-menu > div > div:hover{
+   background-color: rgb(241, 241, 241,);
+}
+
+  /* HOME PAGE CSS ========================================================================= */
