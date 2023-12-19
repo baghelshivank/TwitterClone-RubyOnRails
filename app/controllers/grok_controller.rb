@@ -1,0 +1,2 @@
+class GrokController < ApplicationController
+end

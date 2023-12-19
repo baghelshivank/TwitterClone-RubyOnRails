@@ -1,0 +1,2 @@
+class PremiumController < ApplicationController
+end
