@@ -17,9 +17,6 @@
  @import "font-awesome";
  @import "bootstrap";
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
-
  
  *{
     margin: 0;
@@ -38,12 +35,12 @@
    flex-direction: column;
    justify-content: space-evenly;
    align-items: center;
+   border-right: 2px solid rgb(239, 243, 244);
 }
 #side-menu > div{
-   width: 2rem;
-   height: 2rem;
+   width: 3rem;
+   height: 3rem;
    border-radius: 50%;
-
 
 }
 #side-menu > div > div{
@@ -51,8 +48,67 @@
    height: 100%;
    border-radius: 50%;
 }
+
 #side-menu > div > div:hover{
    background-color: rgb(241, 241, 241,);
 }
 
   /* HOME PAGE CSS ========================================================================= */
+
+  #home-outer{
+   min-height:100vh; 
+   min-width:100vw; 
+   background-color:white;
+   display: flex;
+
+  }
+  #home-inner1{
+   min-height: 100vh;
+   width: 10vw;
+   border-right: 2px solid rgb(239, 243, 244);
+
+  }
+  #home-inner2{
+   min-height: 100vh;
+   width: 60vw;
+   border-right: 2px solid rgb(239, 243, 244);
+
+  }
+  #home-inner3{
+   min-height: 100vh;
+   width: 30vw;
+   border-right: 2px solid rgb(239, 243, 244);
+  }
+  #home-inner21{
+   height: 3.25rem;
+   width:48rem;
+   border-bottom: 1px solid rgb(239, 243, 244);
+   display: flex;
+   justify-content: space-evenly;
+
+  }
+  #home-inner211{
+   width: 22.3rem;
+  }
+  #home-inner212{
+   width: 22.3rem;
+  }
+  #home-inner213{
+   width: 3.25rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+  #home-inner213 i{
+   color: #0f1419;
+  }
+  #home-inner211, #home-inner212, #home-inner213{
+   height: 3.25rem;
+   line-height: 3.25rem;
+   text-align: center;
+   color: gray;
+  }
+  #home-inner211:hover, #home-inner212:hover, #home-inner213:hover{
+   background-color: rgb(239, 243, 244);
+  }
+

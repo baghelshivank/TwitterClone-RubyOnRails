@@ -1,6 +1,2 @@
-<% if user_signed_in? %> 
-  redirect_to :controller => 'home', :action => 'index'
-<% else %>
-  <%= button_to "Sign in", new_user_session_path %> 
-<% end %>
 <h1> Landing Successful </h1>
+<%= link_to "Sign in", new_user_session_path %> 

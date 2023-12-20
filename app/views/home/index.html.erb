@@ -1,18 +1,18 @@
-<div id="home-outer">
+<div id="home-outer" style="">
     <div id="home-inner1">
-        <%= render "../shared/side_menu" %>
+        <%= render "shared/side_menu" %>
     </div>
     <div id="home-inner2">
         <div id="home-inner21">
             <div id="home-inner211"><span>For you</span></div>
             <div id="home-inner212"><span>Following</span></div>
-            <div id="home-inner213"></div>
+            <div id="home-inner213"><i class="fa-solid fa-gear"></i></div>
         </div>
         <div id="home-inner22">
             <%= link_to 'New Post', new_post_path %>
         </div>
         <div id="home-inner23">
-            <table class="table table-hover table-dark" >>
+            <table>
                 <thead>                
                     <tr>                
                         <th scope="col">.</th>                
@@ -41,8 +41,7 @@
 
     </div>
     <div id="home-inner3">
-        <div> Welcome <%= current_user.email %> </div> 
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+
     </div>
 
 </div>

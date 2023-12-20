@@ -12,8 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    redirect_to :controller => 'home', :action => 'index'
-    redirect_to post_path(@post), status: :see_other
+    # redirect_to :controller => 'home', :action => 'index'
+    # redirect_to post_path(@post), status: :see_other
 
   end
 

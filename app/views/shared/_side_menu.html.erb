@@ -1,110 +1,110 @@
 <div id="side-menu">
-    <ul>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
+        
+            <%= link_to home_index_path do %>
                 <div id="x-btn-wrapper">
                     <div id="x-btn">
-                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-x-twitter fa-2x" style="color: #0f1419;"></i>
                     </div>
                 </div>
             <% end%>
-        </li>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
+        
+        
+            <%= link_to home_index_path do %>
                 <div id="home-btn-wrapper">
                     <div id="home-btn">
-                        <i class="fa-regular fa-house"></i>
+                        <i class="fa-solid fa-house fa-2x" style="color: #0f1419;"></i>
                     </div>
                 </div>
             <% end%>
-        </li>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
+        
+        
+            <%= link_to explore_index_path do %>
                 <div id="explore-btn-wrapper">
                     <div id="explore-btn">
-                        <i class="fa-regular fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-magnifying-glass fa-2x" style="color: #0f1419;"></i>
                     </div>
                 </div>
             <% end%>
-        </li>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
+        
+        
+            <%= link_to notifications_path do %>
                 <div id="noti-btn-wrapper">
                     <div id="noti-btn">
-                        <i class="fa-regular fa-bell"></i>
+                        <i class="fa-solid fa-bell fa-2x" style="color: #0f1419;"></i>
                     </div>
                 </div>
             <% end%>
-        </li>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
+        
+        
+            <%= link_to messages_path do %>
                 <div id="msgs-btn-wrapper">
                     <div id="msgs-btn">
-                        <i class="fa-regular fa-envelope"></i>
+                        <i class="fa-solid fa-envelope fa-2x" style="color: #0f1419;"></i>
                     </div>
                 </div>
             <% end%>
-        </li>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
+        
+        
+            <%= link_to grok_index_path do %>
             <div id="grok-btn-wrapper">
-                <div id="grok-btn" style="height:1.5rem; width:1.5rem; border:4px solid black; border-radius:0%;">
+                <div id="grok-btn" style="display:flex; justify-content:center; align-items:center; font-size:1.5rem; height:2rem; width:2rem; border:3px solid #0f1419; border-radius:0%; color: #0f1419;">
                     <span><b> / </b></span>
                 </div>
             </div>
             <% end%>
-        </li>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
+        
+        
+            <%= link_to lists_path do %>
                 <div id="lists-btn-wrapper">
                     <div id="lists-btn">
-                        <i class="fa-regular fa-file-lines"></i>
+                        <i class="fa-solid fa-file-lines fa-2x" style="color: #0f1419;"></i>
                     </div>
                 </div>
             <% end%>
-        </li>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
+        
+        
+            <%= link_to communities_path do %>
             <div id="communities-btn-wrapper">
                 <div id="communities-btn">
-                    <i class="fa-light fa-user-group"></i>
+                    <i class="fa-solid fa-user-group fa-2x" style="color: #0f1419;"></i>
                 </div>
             </div>
             <% end%>
-        </li>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
+        
+        
+            <%= link_to premium_index_path do %>
                 <div id="premium-btn-wrapper">
                     <div id="premium-btn">
-                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-solid fa-x-twitter fa-2x" style="color: #0f1419;"></i>
                     </div>
                 </div>
             <% end%>
-        </li>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
+        
+        
+            <%= link_to profile_index_path do %>
             <div id="profile-btn-wrapper">
                 <div id="profile-btn">
+                    <i class="fa-solid fa-user fa-2x" style="color: #0f1419;"></i>
                 </div>
             </div>
             <% end%>
-        </li>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
-                <div id="more-btn-wrapper">
-                    <div id="more-btn">
+        
+        
+            <%= button_to destroy_user_session_path, method: :delete do %>
+                <div id="logout-btn-wrapper">
+                    <div id="logout-btn">
+                        <i class="fa-solid fa-right-from-bracket fa-2x" style="color: #0f1419;"></i>
                     </div>
                 </div>
             <% end%>
-        </li>
-        <li>
-            <%= link_to edit_article_path(@article) do %>
+        
+        
+            <%= link_to posts_path, method: :post do %>
             <div id="post-btn-wrapper">
                 <div id="post-btn">
+                    <i class="fa-solid fa-feather-pointed fa-2x" style="color: #1d9bf0;"></i>
                 </div>
             </div>
             <% end%>
-        </li>
-
-    </ul>
+        
 </div>

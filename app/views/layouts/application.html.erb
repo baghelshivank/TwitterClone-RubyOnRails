@@ -10,10 +10,29 @@
     <%= javascript_importmap_tags %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
+  
   </head>
 
   <body style="background-color: black; color:white; min-height: 100vh; min-width: 100vw;">
 
     <%= yield %>
+
+<script>
+  document.addEventListener('turbo:before-fetch-response', (event) => {
+    const isLogoutLink = event.detail.fetchOptions.url.includes('<%= destroy_user_session_path %>');
+    if (isLogoutLink) {
+      event.preventDefault();
+
+      // Show confirmation dialog
+      const userConfirmed = window.confirm('Are you sure you want to log out?');
+      
+      // Proceed with logout only if the user confirmed
+      if (userConfirmed) {
+        Turbo.visit(event.detail.fetchOptions.url, { action: 'replace' });
+      }
+    }
+  });
+</script>
   </body>
 </html>
