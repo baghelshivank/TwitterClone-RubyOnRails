@@ -9,10 +9,40 @@
             <div id="home-inner213"></div>
         </div>
         <div id="home-inner22">
+            <%= link_to 'New Post', new_post_path %>
+        </div>
+        <div id="home-inner23">
+            <table class="table table-hover table-dark" >>
+                <thead>                
+                    <tr>                
+                        <th scope="col">.</th>                
+                        <th scope="col">Post Link</th>                
+                        <th scope="col">Date Posted</th>                
+                        <th scope="col">.</th>                
+                        <th scope="col">Likes</th>                
+                    </tr>                
+                </thead>            
+                <tbody>            
+                    <% @posts.each do |post| %>       
+                        <% unless post.archived? %>            
+                            <tr>            
+                                <td scope="row"> <%=post.id%> </td>            
+                                <td> <%=link_to post.post_id, post_path(post)%> </td>            
+                                <td> <%=post.created_at%> </td>            
+                                <td> <%=render partial: "likes/button", locals: {likeable: post}%> </td>            
+                                <td> <%=post.likes.count%></td>
+                            </tr>            
+                        <% end %>            
+                    <% end %>            
+                </tbody>            
+            </table>
+        
         </div>
 
     </div>
     <div id="home-inner3">
+        <div> Welcome <%= current_user.email %> </div> 
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
     </div>
 
 </div>

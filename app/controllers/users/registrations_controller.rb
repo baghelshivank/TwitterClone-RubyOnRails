@@ -13,6 +13,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     redirect_to :controller => 'home', :action => 'index'
+    redirect_to post_path(@post), status: :see_other
+
+  end
 
   # GET /resource/edit
   # def edit

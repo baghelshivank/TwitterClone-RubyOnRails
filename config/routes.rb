@@ -15,4 +15,25 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root to: "twitter_landing_page#index"
+
+  resources :communities
+  resources :explore
+  resources :grok
+  resources :home
+  resources :lists
+  resources :logout
+  resources :messages
+  resources :notifications
+  resources :premium
+  resources :profile
+
+  resources :posts do
+    resources :likes
+    resources :replies do
+      resources :likes
+    end
+  end
+
+  resources :likes, only: %i[create destroy]
+
 end
