@@ -1,4 +1,5 @@
-<%= form_with(model: reply) do |form| %>
+
+<%= form_with model: [ @post, @post.replies.build ] do |form| %>
     <% if reply.errors.any? %>
      <div id="error_explanation">
       <h2><%= pluralize(reply.errors.count, "error") %> prohibited this reply from being saved: 

@@ -1,110 +1,110 @@
 <div id="side-menu">
         
-            <%= link_to home_index_path do %>
-                <div id="x-btn-wrapper">
-                    <div id="x-btn">
-                        <i class="fa-brands fa-x-twitter fa-2x" style="color: #0f1419;"></i>
-                    </div>
-                </div>
-            <% end%>
-        
-        
-            <%= link_to home_index_path do %>
-                <div id="home-btn-wrapper">
-                    <div id="home-btn">
-                        <i class="fa-solid fa-house fa-2x" style="color: #0f1419;"></i>
-                    </div>
-                </div>
-            <% end%>
-        
-        
-            <%= link_to explore_index_path do %>
-                <div id="explore-btn-wrapper">
-                    <div id="explore-btn">
-                        <i class="fa-solid fa-magnifying-glass fa-2x" style="color: #0f1419;"></i>
-                    </div>
-                </div>
-            <% end%>
-        
-        
-            <%= link_to notifications_path do %>
-                <div id="noti-btn-wrapper">
-                    <div id="noti-btn">
-                        <i class="fa-solid fa-bell fa-2x" style="color: #0f1419;"></i>
-                    </div>
-                </div>
-            <% end%>
-        
-        
-            <%= link_to messages_path do %>
-                <div id="msgs-btn-wrapper">
-                    <div id="msgs-btn">
-                        <i class="fa-solid fa-envelope fa-2x" style="color: #0f1419;"></i>
-                    </div>
-                </div>
-            <% end%>
-        
-        
-            <%= link_to grok_index_path do %>
-            <div id="grok-btn-wrapper">
-                <div id="grok-btn" style="display:flex; justify-content:center; align-items:center; font-size:1.5rem; height:2rem; width:2rem; border:3px solid #0f1419; border-radius:0%; color: #0f1419;">
-                    <span><b> / </b></span>
-                </div>
+    <div id="x-btn-wrapper">
+        <%= link_to home_index_path do %>
+            <div id="x-btn">
+                <i class="fa-brands fa-x-twitter fa-2x" style="color: #0f1419;"></i>
             </div>
-            <% end%>
+        <% end%>
+    </div>
         
         
-            <%= link_to lists_path do %>
-                <div id="lists-btn-wrapper">
-                    <div id="lists-btn">
-                        <i class="fa-solid fa-file-lines fa-2x" style="color: #0f1419;"></i>
-                    </div>
-                </div>
-            <% end%>
-        
-        
-            <%= link_to communities_path do %>
-            <div id="communities-btn-wrapper">
-                <div id="communities-btn">
-                    <i class="fa-solid fa-user-group fa-2x" style="color: #0f1419;"></i>
-                </div>
+    <div id="home-btn-wrapper">
+        <%= link_to home_index_path do %>
+            <div id="home-btn">
+                <i class="fa-solid fa-house fa-2x" title="Home" style="color: #0f1419;"></i>
             </div>
-            <% end%>
+        <% end%>
+    </div>
         
         
-            <%= link_to premium_index_path do %>
-                <div id="premium-btn-wrapper">
-                    <div id="premium-btn">
-                        <i class="fa-solid fa-x-twitter fa-2x" style="color: #0f1419;"></i>
-                    </div>
-                </div>
-            <% end%>
-        
-        
-            <%= link_to profile_index_path do %>
-            <div id="profile-btn-wrapper">
-                <div id="profile-btn">
-                    <i class="fa-solid fa-user fa-2x" style="color: #0f1419;"></i>
-                </div>
+    <div id="explore-btn-wrapper">
+        <%= link_to explore_index_path do %>
+            <div id="explore-btn">
+                <i class="fa-solid fa-magnifying-glass fa-2x" title="Explore" style="color: #0f1419;"></i>
             </div>
-            <% end%>
+        <% end%>
+    </div>
         
         
-            <%= button_to destroy_user_session_path, method: :delete do %>
-                <div id="logout-btn-wrapper">
-                    <div id="logout-btn">
-                        <i class="fa-solid fa-right-from-bracket fa-2x" style="color: #0f1419;"></i>
-                    </div>
-                </div>
-            <% end%>
-        
-        
-            <%= link_to posts_path, method: :post do %>
-            <div id="post-btn-wrapper">
-                <div id="post-btn">
-                    <i class="fa-solid fa-feather-pointed fa-2x" style="color: #1d9bf0;"></i>
-                </div>
+    <div id="noti-btn-wrapper">
+        <%= link_to notifications_path do %>
+            <div id="noti-btn">
+                <i class="fa-solid fa-bell fa-2x" title="Notifications" style="color: #0f1419;"></i>
             </div>
-            <% end%>
+        <% end%>
+    </div>
+        
+        
+    <div id="msgs-btn-wrapper">
+        <%= link_to messages_path do %>
+            <div id="msgs-btn">
+                <i class="fa-solid fa-envelope fa-2x" title="Messages" style="color: #0f1419;"></i>
+            </div>
+        <% end%>
+    </div>
+        
+        
+    <div id="grok-btn-wrapper">
+        <%= link_to grok_index_path do %>
+            <div id="grok-btn" title="Grok" style="display:flex; justify-content:center; align-items:center; font-size:1.5rem; height:2rem; width:2rem; border:3px solid #0f1419; border-radius:0%; color: #0f1419;">
+                <span><b> / </b></span>
+            </div>
+        <% end%>
+    </div>
+        
+        
+    <div id="lists-btn-wrapper">
+        <%= link_to lists_path do %>
+            <div id="lists-btn">
+                <i class="fa-solid fa-file-lines fa-2x" title="Lists" style="color: #0f1419;"></i>
+            </div>
+        <% end%>
+    </div>
+        
+        
+    <div id="communities-btn-wrapper">
+        <%= link_to communities_path do %>
+            <div id="communities-btn">
+                <i class="fa-solid fa-user-group fa-2x" title="Communities" style="color: #0f1419;"></i>
+            </div>
+        <% end%>
+    </div>
+        
+        
+    <div id="premium-btn-wrapper">
+        <%= link_to premium_index_path do %>
+            <div id="premium-btn">
+                <i class="fa-solid fa-x-twitter fa-2x" title="Premium" style="color: #0f1419;"></i>
+                </div>
+        <% end%>
+    </div>
+        
+        
+    <div id="profile-btn-wrapper">
+        <%= link_to profile_index_path do %>
+            <div id="profile-btn">
+                <i class="fa-solid fa-user fa-2x" title="Profile" style="color: #0f1419;"></i>
+            </div>
+        <% end%>
+    </div>
+        
+        
+    <div id="logout-btn-wrapper">
+        <%= button_to destroy_user_session_path, method: :delete do %>
+            <div id="logout-btn">
+                <i class="fa-solid fa-right-from-bracket fa-2x" title="Logout" style="color: #0f1419;"></i>
+            </div>
+        <% end%>
+    </div>
+        
+        
+    <div id="post-btn-side-menu-wrapper">
+        <%= link_to posts_path, method: :post do %>
+            <div id="post-btn-side-menu">
+                <i class="fa-solid fa-feather-pointed fa-2x" title="Post" style="color: #1d9bf0;"></i>
+            </div>
+        <% end%>
+    </div>
         
 </div>

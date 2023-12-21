@@ -25,7 +25,7 @@ class RepliesController < ApplicationController
     end
 
     private
-        def comment_params
+        def reply_params
             params.require(:reply).permit(:post_id, :user_id, :reply_body)
        end
        

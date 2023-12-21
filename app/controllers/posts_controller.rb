@@ -40,6 +40,6 @@ class PostsController < ApplicationController
             @post = Post.find(params[:id])
         end
         def post_params
-            params.require(:post).permit(:post_body)
+            params.require(:post).permit(:user_id, :post_body)
         end
 end

@@ -8,10 +8,11 @@
             <div id="home-inner212"><span>Following</span></div>
             <div id="home-inner213"><i class="fa-solid fa-gear"></i></div>
         </div>
-        <div id="home-inner22">
-            <%= link_to 'New Post', new_post_path %>
+        <div id="home-inner-22">
+            <%= render "posts/form", post: Post.new %>
         </div>
         <div id="home-inner23">
+
             <table>
                 <thead>                
                     <tr>                
@@ -24,15 +25,13 @@
                 </thead>            
                 <tbody>            
                     <% @posts.each do |post| %>       
-                        <% unless post.archived? %>            
                             <tr>            
                                 <td scope="row"> <%=post.id%> </td>            
-                                <td> <%=link_to post.post_id, post_path(post)%> </td>            
+                                <td> <%=link_to post.id, post_path(post)%> </td>            
                                 <td> <%=post.created_at%> </td>            
                                 <td> <%=render partial: "likes/button", locals: {likeable: post}%> </td>            
                                 <td> <%=post.likes.count%></td>
                             </tr>            
-                        <% end %>            
                     <% end %>            
                 </tbody>            
             </table>
@@ -41,7 +40,7 @@
 
     </div>
     <div id="home-inner3">
-
+            <%= link_to 'New Post', new_post_path %>
     </div>
 
 </div>
