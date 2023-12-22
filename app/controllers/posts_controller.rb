@@ -17,7 +17,7 @@ class PostsController < ApplicationController
         end
     end
     def show
-        @reply = @post.replies.build
+        @replies = @post.replies
         render "show"
     end
     def edit

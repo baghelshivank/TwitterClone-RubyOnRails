@@ -21,23 +21,26 @@ Rails.application.routes.draw do
   root to: "twitter_landing_page#index"
 
   resources :communities
-  resources :explore
+  resources :explore do
+    get "search", on: :collection
+  end
   resources :grok
   resources :home
   resources :lists
-  resources :logout
   resources :messages
   resources :notifications
   resources :premium
   resources :profile
 
   resources :posts do
-    resources :likes
     resources :replies do
       resources :likes
     end
+    resources :likes
+
   end
 
   resources :likes, only: %i[create destroy]
+  resources :follows, only: %i[create destroy]
 
 end

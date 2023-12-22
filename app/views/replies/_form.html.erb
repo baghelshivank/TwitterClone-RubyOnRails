@@ -1,0 +1,16 @@
+
+<%= form_with model: [@post, @post.replies.build] do |form| %>
+
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+    <%= form.hidden_field :post_id, value: @post.id %>
+ 
+    <p>
+        <%= form.label :reply_body, "Reply:" %>
+        <%= form.text_area :reply_body %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+<% end %>

@@ -24,7 +24,37 @@
                     </tr>                
                 </thead>            
                 <tbody>            
-                    <% @posts.each do |post| %>       
+                    <% @posts.each do |post| %>    
+                        <div id="post-block">
+                            <div id="post-block1">
+                                <div></div>
+                            </div>
+                            <div id="post-block2">
+                                <div id="post-block21">
+                                    <div id="post-block211">
+                                        <div><span><b><%= User.find(post.user_id).name %></b></span></div>
+                                        <div><i class="fa-solid fa-circle-check" style="color: #1d9bf0;"></i></div>
+                                        <div><span>@<%= User.find(post.user_id).username %></span></div>
+                                        <div><span>.</span></div>
+                                        <div><span><%= distance_of_time_in_words post.created_at, Time.now %> ago</span></div>
+                                    </div>
+                                    <div id="post-block212"><i class="fa-solid fa-ellipsis" style="color: gray;"></i></div>
+                                </div>
+                                <div id="post-block22">
+                                    <p><%= post.post_body%></p>
+                                </div>
+                                <div id="post-block23"></div>
+                                <div id="post-block24">
+                                    <div><i class="fa-regular fa-comment" style="color: gray;"></i></div>
+                                    <div><i class="fa-solid fa-arrows-rotate" style="color: gray;"></i></div>
+                                    <div><i class="fa-regular fa-heart" style="color: gray;"></i> <%= post.likes.count%></div>
+                                    <div><i class="fa-solid fa-chart-column" style="color: gray;"></i></div>
+                                    <div><i class="fa-regular fa-bookmark" style="color: gray;"></i></div>
+                                    <div><i class="fa-regular fa-share-from-square" style="color: gray;"></i></div>
+                                </div>
+                            </div>
+
+                        </div>   
                             <tr>            
                                 <td scope="row"> <%=post.id%> </td>            
                                 <td> <%=link_to post.id, post_path(post)%> </td>            
@@ -40,7 +70,13 @@
 
     </div>
     <div id="home-inner3">
-            <%= link_to 'New Post', new_post_path %>
+        <div id="home-inner31"></div>
+        <div id="home-inner32">
+            <h2><b>Subscribe to Premium</b></h2>
+        </div>
+        <div id="home-inner33"></div>
+        <div id="home-inner34"></div>
+        <div id="home-inner35"></div>
     </div>
 
 </div>

@@ -1,0 +1,8 @@
+<%= form_with url: explore_index_path, method: :get do |form| %>
+
+    <%= form.label :search, "Whom are you looking for ? " %>
+    <%= form.text_field :search_query, placeholder:"Enter the username" %>
+    <%= form.submit "Search" %>
+
+<% end %>
+  
