@@ -1,17 +1,17 @@
-<div id="home-outer" style="">
-    <div id="home-inner1">
+<div class="home-outer" style="">
+    <div class="home-inner1">
         <%= render "shared/side_menu" %>
     </div>
-    <div id="home-inner2">
-        <div id="home-inner21">
-            <div id="home-inner211"><span>For you</span></div>
-            <div id="home-inner212"><span>Following</span></div>
-            <div id="home-inner213"><i class="fa-solid fa-gear"></i></div>
+    <div class="home-inner2">
+        <div class="home-inner21">
+            <div class="home-inner211"><span>For you</span></div>
+            <div class="home-inner212"><span>Following</span></div>
+            <div class="home-inner213"><i class="fa-solid fa-gear"></i></div>
         </div>
-        <div id="home-inner-22">
+        <div class="home-inner-22">
             <%= render "posts/form", post: Post.new %>
         </div>
-        <div id="home-inner23">
+        <div class="home-inner23">
 
             <table>
                 <thead>                
@@ -24,40 +24,42 @@
                     </tr>                
                 </thead>            
                 <tbody>            
-                    <% @posts.each do |post| %>    
-                        <div id="post-block">
-                            <div id="post-block1">
-                                <div></div>
-                            </div>
-                            <div id="post-block2">
-                                <div id="post-block21">
-                                    <div id="post-block211">
-                                        <div><span><b><%= User.find(post.user_id).name %></b></span></div>
-                                        <div><i class="fa-solid fa-circle-check" style="color: #1d9bf0;"></i></div>
-                                        <div><span>@<%= User.find(post.user_id).username %></span></div>
-                                        <div><span>.</span></div>
-                                        <div><span><%= distance_of_time_in_words post.created_at, Time.now %> ago</span></div>
+                    <% @posts.each do |post| %>   
+                        <%=link_to post_path(post) do%> 
+                            <div class="post-block">
+                                <div class="post-block1">
+                                    <div></div>
+                                </div>
+                                <div class="post-block2">
+                                    <div class="post-block21">
+                                        <div class="post-block211">
+                                            <div><span><b><%= User.find(post.user_id).name %></b></span></div>
+                                            <div><i class="fa-solid fa-circle-check" style="color: #1d9bf0;"></i></div>
+                                            <div><span>@<%= User.find(post.user_id).username %></span></div>
+                                            <div><span>.</span></div>
+                                            <div><span><%= distance_of_time_in_words post.created_at, Time.now %> ago</span></div>
+                                        </div>
+                                        <div class="post-block212"><i class="fa-solid fa-ellipsis" style="color: gray;"></i></div>
                                     </div>
-                                    <div id="post-block212"><i class="fa-solid fa-ellipsis" style="color: gray;"></i></div>
+                                    <div class="post-block22">
+                                        <p><%= post.post_body%></p>
+                                    </div>
+                                    <div class="post-block23"></div>
+                                    <div class="post-block24">
+                                        <div><i class="fa-regular fa-comment" style="color: gray;"></i></div>
+                                        <div><i class="fa-solid fa-arrows-rotate" style="color: gray;"></i></div>
+                                        <div><i class="fa-regular fa-heart" style="color: gray;"></i> <%= post.likes.count%></div>
+                                        <div><i class="fa-solid fa-chart-column" style="color: gray;"></i></div>
+                                        <div><i class="fa-regular fa-bookmark" style="color: gray;"></i></div>
+                                        <div><i class="fa-regular fa-share-from-square" style="color: gray;"></i></div>
+                                    </div>
                                 </div>
-                                <div id="post-block22">
-                                    <p><%= post.post_body%></p>
-                                </div>
-                                <div id="post-block23"></div>
-                                <div id="post-block24">
-                                    <div><i class="fa-regular fa-comment" style="color: gray;"></i></div>
-                                    <div><i class="fa-solid fa-arrows-rotate" style="color: gray;"></i></div>
-                                    <div><i class="fa-regular fa-heart" style="color: gray;"></i> <%= post.likes.count%></div>
-                                    <div><i class="fa-solid fa-chart-column" style="color: gray;"></i></div>
-                                    <div><i class="fa-regular fa-bookmark" style="color: gray;"></i></div>
-                                    <div><i class="fa-regular fa-share-from-square" style="color: gray;"></i></div>
-                                </div>
-                            </div>
 
-                        </div>   
+                            </div>   
+                        <%end%>
                             <tr>            
-                                <td scope="row"> <%=post.id%> </td>            
-                                <td> <%=link_to post.id, post_path(post)%> </td>            
+                                <td scope="row"> <%=post.class%> </td>            
+                                <td> <%=link_to post.class, post_path(post)%> </td>            
                                 <td> <%=post.created_at%> </td>            
                                 <td> <%=render partial: "likes/button", locals: {likeable: post}%> </td>            
                                 <td> <%=post.likes.count%></td>
@@ -69,17 +71,17 @@
         </div>
 
     </div>
-    <div id="home-inner3">
-    <div id="home-inner31">
+    <div class="home-inner3">
+    <div class="home-inner31">
         <div><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #575b60;"></i></div>
         <input type="search" placeholder="Search">
     </div>
-    <div id="home-inner32">
+    <div class="home-inner32">
         <h2><b>Subscribe to Premium</b></h2>
     </div>
-    <div id="home-inner33"></div>
-    <div id="home-inner34"></div>
-    <div id="home-inner35"></div>
+    <div class="home-inner33"></div>
+    <div class="home-inner34"></div>
+    <div class="home-inner35"></div>
 </div>
 
 </div>
