@@ -1,17 +1,17 @@
 <%= form_with(model: post) do |form| %>
-    <div id="home-inner22">
-      <div id="home-inner221">
+    <div class="home-inner22">
+      <div class="home-inner221">
           <div style=""><span style="color:white; font-size:1.5rem">S</span></div>
       </div>
-      <div id="home-inner222">
-          <div id="home-inner2221">
+      <div class="home-inner222">
+          <div class="home-inner2221">
             <%= form.text_area :post_body, id: "postTextarea", placeholder: "What is happening?!", required: true %>
           </div>
-          <div id="home-inner2222">
+          <div class="home-inner2222">
               <div style="display:flex; justify-content:center; align-items:center; width:10%; height:3rem;"><i class="fa-solid fa-earth-americas" style="color: #1d9bf0; line-height:3rem"></i></div>
               <div style="width:90%; height:3rem; color: #1d9bf0; line-height:3rem;">Everyone can reply</div>
           </div>
-          <div id="home-inner2223">
+          <div class="home-inner2223">
               <div style="width:40%; height:3rem; line-height:3rem; display:flex; justify-content:space-evenly;">
                   <i class="fa-solid fa-image" title="Media" style="color: #1d9bf0; line-height:3rem;"></i>
                   <i class="fa-solid fa-note-sticky" title="Sticker" style="color: #1d9bf0; line-height:3rem;"></i>
@@ -23,9 +23,9 @@
 
               <%= form.hidden_field :user_id, value: current_user.id %>
 
-                <div id="post-btn-wrapper">
+                <div class="post-btn-wrapper">
                     <%= button_to posts_path(@post), method: :post do %>
-                        <div id="post-btn">
+                        <div class="post-btn">
                             <span> Post </span>
                         </div>
                     <% end %>

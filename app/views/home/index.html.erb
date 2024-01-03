@@ -13,75 +13,187 @@
         </div>
         <div class="home-inner23">
 
-            <table>
-                <thead>                
-                    <tr>                
-                        <th scope="col">.</th>                
-                        <th scope="col">Post Link</th>                
-                        <th scope="col">Date Posted</th>                
-                        <th scope="col">.</th>                
-                        <th scope="col">Likes</th>                
-                    </tr>                
-                </thead>            
-                <tbody>            
-                    <% @posts.each do |post| %>   
-                        <%=link_to post_path(post) do%> 
-                            <div class="post-block">
-                                <div class="post-block1">
-                                    <div></div>
+       
+            <% @posts.each do |post| %>   
+                <%=link_to post_path(post) do%> 
+                    <div class="post-block">
+                        <div class="post-block1">
+                            <div></div>
+                        </div>
+                        <div class="post-block2">
+                            <div class="post-block21">
+                                <div class="post-block211">
+                                    <div><span><b><%= User.find(post.user_id).name %></b></span></div>
+                                    <div><i class="fa-solid fa-circle-check" style="color: #1d9bf0;"></i></div>
+                                    <div><span style="color:rgb(91,107,120);">@<%= User.find(post.user_id).username %></span></div>
+                                    <div><span>.</span></div>
+                                    <div><span><%= distance_of_time_in_words post.created_at, Time.now %> ago</span></div>
                                 </div>
-                                <div class="post-block2">
-                                    <div class="post-block21">
-                                        <div class="post-block211">
-                                            <div><span><b><%= User.find(post.user_id).name %></b></span></div>
-                                            <div><i class="fa-solid fa-circle-check" style="color: #1d9bf0;"></i></div>
-                                            <div><span>@<%= User.find(post.user_id).username %></span></div>
-                                            <div><span>.</span></div>
-                                            <div><span><%= distance_of_time_in_words post.created_at, Time.now %> ago</span></div>
-                                        </div>
-                                        <div class="post-block212"><i class="fa-solid fa-ellipsis" style="color: gray;"></i></div>
-                                    </div>
-                                    <div class="post-block22">
-                                        <p><%= post.post_body%></p>
-                                    </div>
-                                    <div class="post-block23"></div>
-                                    <div class="post-block24">
-                                        <div><i class="fa-regular fa-comment" style="color: gray;"></i></div>
-                                        <div><i class="fa-solid fa-arrows-rotate" style="color: gray;"></i></div>
-                                        <div><i class="fa-regular fa-heart" style="color: gray;"></i> <%= post.likes.count%></div>
-                                        <div><i class="fa-solid fa-chart-column" style="color: gray;"></i></div>
-                                        <div><i class="fa-regular fa-bookmark" style="color: gray;"></i></div>
-                                        <div><i class="fa-regular fa-share-from-square" style="color: gray;"></i></div>
-                                    </div>
-                                </div>
+                                <div class="post-block212"><i class="fa-solid fa-ellipsis" style="color: gray;"></i></div>
+                            </div>
+                            <div class="post-block22">
+                                <p><%= post.post_body%></p>
+                            </div>
+                            <div class="post-block23"></div>
+                            <div class="post-block24">
+                                <div><i class="fa-regular fa-comment" style="color: gray;"></i></div>
+                                <div><i class="fa-solid fa-arrows-rotate" style="color: gray;"></i></div>
+                                <div><i class="fa-regular fa-heart" style="color: gray;"></i> <%= post.likes.count%></div>
+                                <div><i class="fa-solid fa-chart-column" style="color: gray;"></i></div>
+                                <div><i class="fa-regular fa-bookmark" style="color: gray;"></i></div>
+                                <div><i class="fa-regular fa-share-from-square" style="color: gray;"></i></div>
+                            </div>
+                        </div>
 
-                            </div>   
-                        <%end%>
-                            <tr>            
-                                <td scope="row"> <%=post.class%> </td>            
-                                <td> <%=link_to post.class, post_path(post)%> </td>            
-                                <td> <%=post.created_at%> </td>            
-                                <td> <%=render partial: "likes/button", locals: {likeable: post}%> </td>            
-                                <td> <%=post.likes.count%></td>
-                            </tr>            
-                    <% end %>            
-                </tbody>            
-            </table>
+                    </div>   
+                <%end%>
+                
+                <table>
+                    <thead>                
+                        <tr>                
+                            <th scope="col">.</th>                
+                            <th scope="col">Post Link</th>                
+                            <th scope="col">Date Posted</th>                
+                            <th scope="col">.</th>                
+                            <th scope="col">Likes</th>                
+                        </tr>                
+                    </thead>            
+                    <tbody>     
+                        <tr>            
+                            <td scope="row"> <%=post.class%> </td>            
+                            <td> <%=link_to post.class, post_path(post)%> </td>            
+                            <td> <%=post.created_at%> </td>            
+                            <td> <%=render partial: "likes/button", locals: {likeable: post}%> </td>            
+                            <td> <%=post.likes.count%></td>
+                        </tr>            
+                    </tbody>            
+                </table>
+            <% end %>            
+
         
         </div>
 
     </div>
     <div class="home-inner3">
-    <div class="home-inner31">
-        <div><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #575b60;"></i></div>
-        <input type="search" placeholder="Search">
+        <div class="home-inner31-wrapper">
+            <div class="home-inner31">
+                <div><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #575b60;"></i></div>
+                <input type="search" placeholder="Search">
+            </div>
+        </div>
+        <div class="home-inner32">
+            <h5><b>Subscribe to Premium</b></h5>
+            <p>Subscribe to unlock new features and if eligible, receive a share of ads revenue.</p>
+            <button class= "subscribe-button"> Subscribe </button>
+        </div>
+        <div class="home-inner33">
+            <h5><b> What's happening </b></h5>
+            <div class="home-inner331">
+                <div class="home-inner3311">
+                    <span class="color-gray">Trending in India</span>
+                    <span class="color-black"><strong>#BitcoinETF</strong></span>
+                    <span class="color-gray">21.1k posts</span>
+                </div>
+                <div class="home-inner3312"><div class="whats-happening-icon-wrapper"><i class="fa-solid fa-ellipsis fa-md"></i></div></div>
+            </div>
+            <div class="home-inner331">
+                <div class="home-inner3311">
+                    <span class="color-gray">Trending in India</span>
+                    <span class="color-black"><strong>#BitcoinETF</strong></span>
+                    <span class="color-gray">21.1k posts</span>
+                </div>
+                <div class="home-inner3312"><div class="whats-happening-icon-wrapper"><i class="fa-solid fa-ellipsis fa-md"></i></div></div>
+            </div>
+            <div class="home-inner331">
+                <div class="home-inner3311">
+                    <span class="color-gray">Trending in India</span>
+                    <span class="color-black"><strong>#BitcoinETF</strong></span>
+                    <span class="color-gray">21.1k posts</span>
+                </div>
+                <div class="home-inner3312"><div class="whats-happening-icon-wrapper"><i class="fa-solid fa-ellipsis fa-md"></i></div></div>
+            </div>
+            <div class="home-inner331">
+                <div class="home-inner3311">
+                    <span class="color-gray">Trending in India</span>
+                    <span class="color-black"><strong>#BitcoinETF</strong></span>
+                    <span class="color-gray">21.1k posts</span>
+                </div>
+                <div class="home-inner3312"><div class="whats-happening-icon-wrapper"><i class="fa-solid fa-ellipsis fa-md"></i></div></div>
+            </div>
+            <div class="home-inner331">
+                <div class="home-inner3311">
+                    <span class="color-gray">Trending in India</span>
+                    <span class="color-black"><strong>#BitcoinETF</strong></span>
+                    <span class="color-gray">21.1k posts</span>
+                </div>
+                <div class="home-inner3312"><div class="whats-happening-icon-wrapper"><i class="fa-solid fa-ellipsis fa-md"></i></div></div>
+            </div>
+            <a class="showmore" href="https://www.instagram.com">
+                <div class="home-inner331">
+                    <span>Show more</span>
+                </div>
+            </a>
+        </div>
+        <div class="home-inner33">
+            <h5><b> Who to follow </b></h5>
+            <div class="home-inner331">
+                <div class="home-inner3313">
+
+                </div>
+                <div class="home-inner3314">
+                    <div class="whats-happening-icon-wrapper">
+                        <i class="fa-solid fa-ellipsis fa-md"></i>
+                    </div>
+                </div>
+                <div class="home-inner3315">
+
+                </div>
+            </div>     
+            <div class="home-inner331">
+                <div class="home-inner3313">
+
+                </div>
+                <div class="home-inner3314">
+                    <div class="whats-happening-icon-wrapper">
+                        <i class="fa-solid fa-ellipsis fa-md"></i>
+                    </div>
+                </div>
+                <div class="home-inner3315">
+
+                </div>
+            </div> 
+            <div class="home-inner331">
+                <div class="home-inner3313">
+
+                </div>
+                <div class="home-inner3314">
+                    <div class="whats-happening-icon-wrapper">
+                        <i class="fa-solid fa-ellipsis fa-md"></i>
+                    </div>
+                </div>
+                <div class="home-inner3315">
+
+                </div>
+            </div>        
+
+            <a class="showmore" href="https://www.instagram.com">
+                <div class="home-inner331">
+                    <span>Show more</span>
+                </div>
+            </a>
+        </div>
+        <div class="home-inner35">
+            <p>
+                <span><a href=""> Terms of Service </a></span>
+                <span><a href=""> Privacy Policy </a></span>
+                <span><a href=""> Cookie Policy </a></span>
+                <span><a href=""> Accessibility </a></span>
+                <span><a href=""> Ads info </a></span>
+                <span><a href=""> More... </a></span>
+                <span><a href=""> &copy;2024 X Corp. </a></span>
+            </p>
+        
+        </div>
     </div>
-    <div class="home-inner32">
-        <h2><b>Subscribe to Premium</b></h2>
-    </div>
-    <div class="home-inner33"></div>
-    <div class="home-inner34"></div>
-    <div class="home-inner35"></div>
-</div>
 
 </div>
