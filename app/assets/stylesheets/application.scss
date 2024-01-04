@@ -31,6 +31,8 @@
   --x_black: rgb(15,20,25);
   --x_gray: rgb(91,107,120);
   --x_darkbluepink: rgb(230, 222, 223);
+  overflow-x: hidden;
+  --scroll-point: 0;
 }
 .color-gray{
   color: var(--x_gray);
@@ -50,8 +52,10 @@
    justify-content: space-evenly;
    align-items: center;
    border-right: 2px solid var(--x_bluepink);
-  //  position: sticky;
-  //  bottom: 0;
+   position: sticky;
+   top: -15rem;
+   overflow-x: hidden;
+   overflow-y: scroll;
 }
 #side-menu>div{
    display: flex;
@@ -87,22 +91,16 @@
    min-width:100vw; 
    background-color:white;
    display: flex;
-  //  position: relative;
-
   }
   .home-inner1{
    min-height: 100vh;
    width: 10vw;
    border-right: 2px solid var(--x_bluepink);
-  //  position: sticky;
-  //  bottom: 0;
-
   }
   .home-inner2{
    min-height: 100vh;
    width: 60vw;
    border-right: 2px solid var(--x_bluepink);
-
   }
   .home-inner3{
    min-height: 100vh;
@@ -111,6 +109,10 @@
    display: flex;
    flex-direction: column;
    align-items: flex-start;
+  }
+  .home-inner30{
+    position: sticky;
+    top: var(--scroll-point);
   }
   .home-inner21{
    height: 4rem;

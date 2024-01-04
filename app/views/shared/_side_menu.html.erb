@@ -91,11 +91,11 @@
         
         
     <div id="logout-btn-wrapper">
-        <%= button_to destroy_user_session_path, method: :delete do %>
+        <%= button_to destroy_user_session_path, method: :delete, id: 'logout-button' do %>
             <div id="logout-btn">
-                <i class="fa-solid fa-right-from-bracket fa-2x" title="Logout" style="color: #0f1419;"></i>
+            <i class="fa-solid fa-right-from-bracket fa-2x" title="Logout" style="color: #0f1419;"></i>
             </div>
-        <% end%>
+        <% end %>
     </div>
         
         
@@ -108,3 +108,11 @@
     </div>
         
 </div>
+
+
+# <script>
+# function logout-clicked() {
+#     window.alert('Logout button clicked!');
+#   }
+
+# </script>
