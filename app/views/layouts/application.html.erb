@@ -14,60 +14,9 @@
   
   </head>
 
-  <body style="background-color: cyan; color:white; min-height: 100vh; min-width: 100vw;">
+  <body style="background-color: black; color: white; min-height: 100vh; min-width: 100vw;">
 
     <%= yield %>
 
-    <script>
-    console.log("updateScrollPoint triggered");
-
-      document.addEventListener('turbo:before-fetch-response', (event) => {
-        const isLogoutLink = event.detail.fetchOptions.url.includes('<%= destroy_user_session_path %>');
-        byebug
-        if (isLogoutLink) {
-          event.preventDefault();
-
-          # // Show confirmation dialog
-          const userConfirmed = window.confirm('Are you sure you want to log out?');
-          
-          # // Proceed with logout only if the user confirmed
-          if (userConfirmed) {
-            Turbo.visit(event.detail.fetchOptions.url, { action: 'replace' });
-          }
-        }
-      });
-    </script>
-
-
-    #   <script>
-
-    #     document.addEventListener('DOMContentLoaded', function () {
-    #     var stickyContent = document.getElementByClassName("home-inner30");
-
-    #     # // Update scroll point based on content height
-    #     function updateScrollPoint() {
-    #         console.log("updateScrollPoint triggered");
-    #         var contentHeight = stickyContent.offsetHeight;
-    #         if(contentHeight>=100vh)
-    #         document.documentElement.style.setProperty('--scroll-point', 'calc(100vh - ' + contentHeight + 'px)');
-    #     }
-
-    #     # // Initial update
-    #     updateScrollPoint();
-
-    #     # // Listen for changes in content height
-    #       var resizeObserver = new ResizeObserver(updateScrollPoint);
-    #       resizeObserver.observe(stickyContent);
-
-    #       window.addEventListener('resize', updateScrollPoint);
-
-    #     # // Optional: You might want to listen for other events that may change the content height
-    #     # // For example, if the content is dynamically loaded, you might listen for those events.
-
-    #     # // window.addEventListener('yourCustomEvent', updateScrollPoint);
-    #     });
-
-
-    # </script>
   </body>
 </html>
