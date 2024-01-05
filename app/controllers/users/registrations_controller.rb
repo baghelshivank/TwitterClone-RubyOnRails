@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
+  # before_action :configure_sign_up_params, only: [:create], if: :devise_controller?
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super
+    # super
     # redirect_to :controller => 'home', :action => 'index'
     # redirect_to post_path(@post), status: :see_other
 
@@ -47,7 +47,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_sign_up_params
     # devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
 
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :dob, :username])
+    # devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :dob, :username])
+    # params.require(:user).permit(:email, :password, :password_confirmation, :name, :username, :dob)
 
   end
 

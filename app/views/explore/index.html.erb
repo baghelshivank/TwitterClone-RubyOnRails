@@ -1,26 +1,36 @@
-<p> User : <%= @user.username %></p>
-<br>
-<p> Name of the user : <%= @user.name %></p>
-<br>
-<p> DOB of the user : <%= @user.dob %></p>
-<br>
-<p> Email of the user : <%= @user.email %></p>
-<br>
-<p> Website of the user : <%= @user.website %></p>
-<br>
-<p> Location of the user : <%= @user.location %></p>
-<br>
-<p> User joined on : <%= @user.created_at %></p>
-<br>
-<br>
-<p> User's Followers : <%= @user.followers.count %></p>
-<br>
+<% @users.each do |user|%>
+  <% if user !== current_user do%> 
 
-<% follower_exists = @user.followers.find_by(id: current_user.id) %>
-<% if follower_exists.nil?  %>
-  <%= button_to("Follow", follows_path, class:"btn btn-success",
-  params:{ user_id: current_user.id, following_id: @user.id}) %>
-    <% else %>
-  <%= button_to("Unfollow", follow_path(@user.id), class:"btn btn-success",
-  method: :delete) %>
+    <div>
+
+      <p> User : <%= user.username %></p>
+      <br>
+      <p> Name of the user : <%= user.name %></p>
+      <br>
+      <p> DOB of the user : <%= user.dob %></p>
+      <br>
+      <p> Email of the user : <%= user.email %></p>
+      <br>
+      <p> Website of the user : <%= user.website %></p>
+      <br>
+      <p> Location of the user : <%= user.location %></p>
+      <br>
+      <p> User joined on : <%= user.created_at %></p>
+      <br>
+      <br>
+      <p> User's Followers : <%= user.followers.count %></p>
+      <br>
+
+      <% follower_exists = user.followers.find_by(id: current_user.id) %>
+      <% if follower_exists.nil?  %>
+        <%= button_to("Follow", follows_path, class:"btn btn-success",
+        params:{ user_id: current_user.id, following_id: user.id}) %>
+          <% else %>
+        <%= button_to("Unfollow", follow_path(user.id), class:"btn btn-success",
+        method: :delete) %>
+      <% end %>
+
+    </div>
+
+  <% end %>
 <% end %>

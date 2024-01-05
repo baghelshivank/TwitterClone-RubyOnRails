@@ -443,7 +443,7 @@
 }
 .home-inner331{
   min-height: 3rem;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   display: flex;
   flex-direction: row;
 }
@@ -490,10 +490,35 @@
   color: var(--x_blue);
 }
 .home-inner3313{
+  flex: 1.5;
+  background-color: red;
+}
+.profile-photo-wrapper{
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 }
 .home-inner3314{
+  flex: 6;
+  // background-color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+
 }
 .home-inner3315{
+  flex: 2.5;
+  // background-color: blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
 }
 .home-inner35{
   min-height: 3rem;

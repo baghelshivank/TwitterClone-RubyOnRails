@@ -137,45 +137,30 @@
             </div>
             <div class="home-inner33">
                 <h5><b> Who to follow </b></h5>
-                <div class="home-inner331">
-                    <div class="home-inner3313">
+                <% @users.each do |user| %>  
+                    <% if user.id != current_user.id %> 
 
-                    </div>
-                    <div class="home-inner3314">
-                        <div class="whats-happening-icon-wrapper">
-                            <i class="fa-solid fa-ellipsis fa-md"></i>
-                        </div>
-                    </div>
-                    <div class="home-inner3315">
+                        <div class="home-inner331">
+                            <div class="home-inner3313">
+                                <div class="profile-photo-wrapper">
+                                    <i class="fa-solid fa-user-secret fa-lg"></i>
+                                </div>
+                            </div>
+                            <div class="home-inner3314">
+                                <span style="color:black;"><b>@<%= user.name %></b><i class="fa-solid fa-circle-check" style="color: #1d9bf0;"></i></span>
+                                <span style="color:gray;"><i>@<%= user.username %></i></span>
+                            </div>
+                            <div class="home-inner3315">
+                                <div class="follow-btn">
+                                    <%= button_to("Follow", follows_path, class:"btn btn-success", params:{ user_id: current_user.id, following_id: user.id}) %>                               
+                                </div>
 
-                    </div>
-                </div>     
-                <div class="home-inner331">
-                    <div class="home-inner3313">
+                            </div>
+                        </div>  
 
-                    </div>
-                    <div class="home-inner3314">
-                        <div class="whats-happening-icon-wrapper">
-                            <i class="fa-solid fa-ellipsis fa-md"></i>
-                        </div>
-                    </div>
-                    <div class="home-inner3315">
-
-                    </div>
-                </div> 
-                <div class="home-inner331">
-                    <div class="home-inner3313">
-
-                    </div>
-                    <div class="home-inner3314">
-                        <div class="whats-happening-icon-wrapper">
-                            <i class="fa-solid fa-ellipsis fa-md"></i>
-                        </div>
-                    </div>
-                    <div class="home-inner3315">
-
-                    </div>
-                </div>        
+                    <% end %>            
+                <% end %>            
+      
 
                 <a class="showmore" href="https://www.instagram.com">
                     <div class="home-inner331">
